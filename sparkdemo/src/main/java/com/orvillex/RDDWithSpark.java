@@ -3,6 +3,7 @@ package com.orvillex;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -14,6 +15,7 @@ import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.rdd.RDD;
 import org.apache.spark.sql.SparkSession;
+import org.apache.spark.util.LongAccumulator;
 
 import scala.Char;
 import scala.Tuple2;
@@ -31,6 +33,22 @@ public final class RDDWithSpark {
         JavaRDD<String> words = JavaRDD.fromRDD(session.sparkContext().parallelize(JavaConverters.asScalaIteratorConverter(Arrays.asList(myCollection).iterator()).asScala().toSeq(), 2, 
             ClassManifestFactory.classType(String.class)), ClassManifestFactory.classType(String.class));
         
+        // 广播变量
+        Map<String, Integer> map = new HashMap();
+        session.sparkContext().broadcast(map, ClassManifestFactory.classType(map.getClass()));
+
+        // 未命名累加器
+        LongAccumulator accUnnamed = new LongAccumulator();
+        session.sparkContext().register(accUnnamed);
+
+        // 名命累加器
+        LongAccumulator accNamed = session.sparkContext().longAccumulator("acc");
+
+        LongAccumulator regNamed = new LongAccumulator();
+        session.sparkContext().register(regNamed, "acc2");
+
+        accNamed.add(2l);
+
         // 转换操作
 
         // distinct
