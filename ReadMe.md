@@ -42,7 +42,8 @@
 
 ## Spark教程  
 
-本教程当前主要以Java为基础进行Demo编写，主要由以下几个文件组成。  
+本教程当前主要以Java为基础进行Demo编写，主要由以下几个文件组成，有关Spark的其他更
+详细的可查阅[本教程](/sparkdemo/ReadMe.md)。    
 
 * AggregateSpark：包含聚合操作
 * JavaSparkPi：基础入门  

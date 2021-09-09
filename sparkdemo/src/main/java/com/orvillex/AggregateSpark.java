@@ -2,6 +2,11 @@ package com.orvillex;
 
 import java.util.Arrays;
 
+import org.apache.commons.cli.BasicParser;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
 import org.apache.spark.SparkConf;
 import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
@@ -17,12 +22,26 @@ import org.apache.spark.sql.types.DataTypes;
 import org.apache.spark.sql.types.StructType;
 
 import breeze.linalg.argmax;
+import breeze.macros.expand.args;
 
 import java.util.HashMap;
 
 public final class AggregateSpark {
     
     public static void main(String[] args) {
+        CommandLineParser parser = new BasicParser();
+        Options commandOptions = new Options();
+        commandOptions.addOption("f", "file", true, "input file");
+        commandOptions.addOption("o", "outfile", true, "output file");
+        try {
+            CommandLine cmdline = parser.parse(commandOptions, args);
+            String file = cmdline.getOptionValue("f");
+            String out = cmdline.getOptionValue("o");
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
         SparkConf sparkConf = new SparkConf().setAppName("JavaSparkPi").setMaster("local"); //.setMaster("spark://ip:port");
         SparkSession session = SparkSession.builder().config(sparkConf).getOrCreate();
         StructType structType = DataTypes.createStructType(Arrays.asList(
