@@ -20,7 +20,10 @@
 * [HBase计数器与协处理器](https://www.yuque.com/guduxiaosheng/bigdata/hbaseobserver)  
 * [HBase与MapReduce教程](https://www.yuque.com/guduxiaosheng/bigdata/mapreducewithhbase)  
 * [HBase与Phoenix教程](https://www.yuque.com/guduxiaosheng/bigdata/hbasewithphoenix)  
-* 
+* [Spark基础教程](https://www.yuque.com/guduxiaosheng/bigdata/spark_basic)  
+* [Spark聚合&连接](https://www.yuque.com/guduxiaosheng/bigdata/agg_inner)  
+* [Spark数据源&RDD](https://www.yuque.com/guduxiaosheng/bigdata/sourceandrdd)  
+
 
 ---
 
@@ -39,4 +42,10 @@
 
 ## Spark教程  
 
-本教程还在持续编写中
+本教程当前主要以Java为基础进行Demo编写，主要由以下几个文件组成。  
+
+* AggregateSpark：包含聚合操作
+* JavaSparkPi：基础入门  
+* JoinSpark：连接操作相关  
+* RDDWithSpark：RDD操作相关  
+* SparkWithHBase：与HBase操作相关  
