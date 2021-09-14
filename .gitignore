@@ -18,9 +18,12 @@ dependency-reduced-pom.xml
 
 # Eclipse Project Files
 
+project
+.bloop
 .classpath
 .project
 .settings/
+.metals
 
 # IntelliJ IDEA Files
 

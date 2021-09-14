@@ -5,13 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "java",
-            "name": "Launch Current File",
-            "request": "launch",
-            "mainClass": "${file}",
-            "args": "-f de/de/de -o outfile fe"
-        },
-        {
             "type": "scala",
             "name": "Debug ",
             "request": "launch",
