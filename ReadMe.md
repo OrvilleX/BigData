@@ -10,20 +10,7 @@
 * Spark：2.4.0  
 * JDK：1.8
 
-## 国内教程（语雀）  
-
-如果读者访问本网站比较吃力，相关教程均已同步至语雀，下面将列出所有教程的内容与地址。  
-
-* [MapReduce基础教程](https://www.yuque.com/guduxiaosheng/bigdata/mapreduce_basic)  
-* [HBase基础教程](https://www.yuque.com/guduxiaosheng/bigdata/hbase_basic)  
-* [HBase过滤器篇](https://www.yuque.com/guduxiaosheng/bigdata/filter)  
-* [HBase计数器与协处理器](https://www.yuque.com/guduxiaosheng/bigdata/hbaseobserver)  
-* [HBase与MapReduce教程](https://www.yuque.com/guduxiaosheng/bigdata/mapreducewithhbase)  
-* [HBase与Phoenix教程](https://www.yuque.com/guduxiaosheng/bigdata/hbasewithphoenix)  
-* [Spark基础教程](https://www.yuque.com/guduxiaosheng/bigdata/spark_basic)  
-* [Spark聚合&连接](https://www.yuque.com/guduxiaosheng/bigdata/agg_inner)  
-* [Spark数据源&RDD](https://www.yuque.com/guduxiaosheng/bigdata/sourceandrdd)  
-
+围绕本源码项目的对应的教程文档可以通过[我的知乎专栏](https://www.zhihu.com/column/c_1693727391665512448)
 
 ---
 
